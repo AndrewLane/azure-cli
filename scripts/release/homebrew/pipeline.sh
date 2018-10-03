@@ -8,7 +8,7 @@ CLI_VERSION=`cat $SYSTEM_ARTIFACTSDIRECTORY/metadata/version`
 HOMEBREW_UPSTREAM_URL=`cat $BUILD_STAGINGDIRECTORY/github/upstream_url`
 TAR_NAME=azure-cli-$CLI_VERSION.tar.gz
 
-docker_files=$(cd $root/docker; pwd)
+docker_files=$(cd $BUILD_SOURCESDIRECTORY/scripts/release/homebrew/docker; pwd)
 pypi_files=$(cd $SYSTEM_ARTIFACTSDIRECTORY/pypi; pwd)
 
 # get a random string of 32 characters
