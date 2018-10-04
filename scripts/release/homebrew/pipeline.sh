@@ -16,8 +16,9 @@ docker run -v $docker_files:/mnt/scripts \
            -v $pypi_files:/mnt/pypi \
            -e CLI_VERSION=$CLI_VERSION \
            -e HOMEBREW_UPSTREAM_URL=$HOMEBREW_UPSTREAM_URL \
+           --name azurecli \
            python:3.6 \
            /mnt/scripts/run.sh
 
-docker cp $container_name:azure-cli.rb $BUILD_STAGINGDIRECTORY/azure-cli.rb
-docker ps -qa | xargs docker rm
+docker cp azurecli:azure-cli.rb $BUILD_STAGINGDIRECTORY/azure-cli.rb
+docker rm --force azurecli
