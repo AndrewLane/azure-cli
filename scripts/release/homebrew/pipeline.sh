@@ -22,3 +22,7 @@ docker run -v $docker_files:/mnt/scripts \
 
 docker cp azurecli:azure-cli.rb $BUILD_STAGINGDIRECTORY/azure-cli.rb
 docker rm --force azurecli
+
+# clean up
+rm -rf $BUILD_STAGINGDIRECTORY/metadata
+rm -rf $BUILD_STAGINGDIRECTORY/pypi
